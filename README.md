@@ -105,6 +105,31 @@ After saving `.mcp.json`, restart Claude Code (`/quit` then relaunch) so it pick
 - **Don't commit `.mcp.json`** — it contains your credentials. It's already in `.gitignore`.
 - **Restart Claude Code** after any `.mcp.json` change; it doesn't hot-reload MCP configs.
 
+### Contributing to This Fork
+
+When making changes, always work on a branch — never commit directly to `main`.
+
+```bash
+# 1. Create a branch
+git checkout -b customize/your-change-description
+
+# 2. Make changes, commit, and push
+git add <files>
+git commit -m "docs: describe your change"
+git push -u origin customize/your-change-description
+
+# 3. Review and merge via CLI
+git checkout main
+git merge customize/your-change-description
+git push origin main
+
+# 4. Clean up the branch
+git branch -d customize/your-change-description
+git push origin --delete customize/your-change-description
+```
+
+> **Do NOT create Pull Requests on GitHub** unless you change the base repository to `Fernandezdarwin17/mcp-atlassian`. GitHub defaults PRs to the upstream (`sooperset/mcp-atlassian`), which is not what we want.
+
 ---
 
 ## Documentation
